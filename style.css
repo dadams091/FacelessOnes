@@ -1,21 +1,47 @@
+* {
+  /* background-color: red; */
+}
+
 body {
     background-color: black;
     color: lime;
     font-family: monospace;
     /* So glitch effect doesn't spill off the screen, helps w performance.  */
     overflow: hidden; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* body fill the screen */
+    height: 100vh;
+    margin: 0;
+    padding: 0;
 }
 
+div {
+  font-size: 44px;
+  color: red;
+}
+
+/* short delay (after page load) before this plays would help */
+/* use javascript to randomize */
 @keyframes glitch {
-    0% { transform: translate(0); }
-    20% { transform: translate(-2px, 2px); }
-    40% { transform: translate(-2px, -2px); }
-    60% { transform: translate(2px, 2px); }
-    80% { transform: translate(2px, -2px); }
-    100% { transform: translate(0); }
+    0% { transform: translate(0); filter: blur(0);}
+    20% { transform: translate(-125px, 71px); filter: blur(2px);}
+    40% { transform: translate(-140px, -102px); filter: blur(0);}
+    60% { transform: translate(287px, 102px); filter: blur(0px);}
+    /* ALREADY BACK AT STARTING POINT */
+    80% { transform: translate(21px, -56px); filter: blur(3px);} 
+    100% { transform: translate(0); filter: blur(0);}
+  }
+
+  @keyframes blink {
+    0% {opacity: 1;}
+    50% {opacity: 0;}
+    100% {opacity: 1;}
   }
 
   .glitch {
-    animation: glitch 0.3s infinite;
+    /* glitch animation plays on page load, blink animation plays after glitch animation */
+    animation: glitch 0.3s, blink 1.3s 1.5s infinite;
   }
   
