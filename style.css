@@ -4,7 +4,7 @@
 
 body {
     background-color: black;
-    color: lime;
+    /* color: lime; */
     font-family: monospace;
     /* So glitch effect doesn't spill off the screen, helps w performance.  */
     overflow: hidden; 
@@ -17,13 +17,17 @@ body {
     padding: 0;
 }
 
-div {
+#main-content {
+  display: none;
+}
+
+.startup-text {
   font-size: 44px;
-  color: red;
+  user-select: none;
 }
 
 /* short delay (after page load) before this plays would help */
-/* use javascript to randomize */
+/* TODO: use javascript to randomize */
 @keyframes glitch {
     0% { transform: translate(0); filter: blur(0);}
     20% { transform: translate(-125px, 71px); filter: blur(2px);}
@@ -40,8 +44,15 @@ div {
     100% {opacity: 1;}
   }
 
-  .glitch {
+  #access-denied {
+    /* TODO: add intermittent glitch?  */
     /* glitch animation plays on page load, blink animation plays after glitch animation */
-    animation: glitch 0.3s, blink 1.3s 1.5s infinite;
+    animation: glitch 0.3s 1.3s, blink 1s 2s infinite;
+    color: firebrick;
+  }
+
+  #access-granted {
+    display: none;
+    color: lime;
   }
   
