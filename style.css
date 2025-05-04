@@ -4,8 +4,8 @@
 
 body {
     background-color: black;
-    /* color: lime; */
-    font-family: monospace;
+    color: lime;
+    font-family: 'VT323', monospace;
     /* So glitch effect doesn't spill off the screen, helps w performance.  */
     overflow: hidden; 
     display: flex;
@@ -19,6 +19,7 @@ body {
 
 #main-content {
   display: none;
+  font-size: 36px;
 }
 
 .startup-text {
@@ -34,7 +35,7 @@ body {
     40% { transform: translate(-140px, -102px); filter: blur(0);}
     60% { transform: translate(287px, 102px); filter: blur(0px);}
     /* ALREADY BACK AT STARTING POINT */
-    80% { transform: translate(21px, -56px); filter: blur(3px);} 
+    80% { transform: translate(21px, -56px); filter: blur(px);} 
     100% { transform: translate(0); filter: blur(0);}
   }
 
