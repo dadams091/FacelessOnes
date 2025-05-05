@@ -1,15 +1,11 @@
-bodyNode = document.querySelector('body');
-accessDeniedText = document.querySelector('#access-denied');
-accessGrantedText = document.querySelector('#access-granted');
-mainContentDiv = document.querySelector('#main-content');
+const accessGranted = document.querySelector('#access-granted');
 
-
-bodyNode.addEventListener('click', () => {
-    accessDeniedText.style.display = 'none';
-    accessGrantedText.style.display = 'block';
+document.body.addEventListener('click', () => {
+    document.querySelector('#access-denied').style.display = 'none';
+    accessGranted.style.display = 'block';
 
     setTimeout(() => {
-        mainContentDiv.style.display = 'block';
-        accessGrantedText.style.display = 'none';
+        document.querySelector('#main-content').style.display = 'block';
+        accessGranted.style.display = 'none';
     }, 2500)
 }, {once: true});

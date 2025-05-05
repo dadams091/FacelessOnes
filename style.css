@@ -1,25 +1,34 @@
 * {
-  /* background-color: red; */
+  margin: 0;
+  padding: 0;
+    /* background-color: red; */
+}
+
+/* TODO: use javascript to randomize position and frequency */
+@keyframes glitch {
+  0% { transform: translate(0); filter: blur(0);} /*initial position*/
+  20% { transform: translate(-125px, 71px); filter: blur(2px);}
+  40% { transform: translate(-140px, -102px); filter: blur(0);}
+  60% { transform: translate(287px, 102px); filter: blur(0px);}
+  80% { transform: translate(21px, -56px); filter: blur(px);} 
+  100% { transform: translate(0); filter: blur(0);} /*back to initial position*/
+}
+
+@keyframes blink {
+  0% {opacity: 1;}
+  50% {opacity: 0;}
+  100% {opacity: 1;}
 }
 
 body {
-    background-color: black;
-    color: lime;
-    font-family: 'VT323', monospace;
-    /* So glitch effect doesn't spill off the screen, helps w performance.  */
-    overflow: hidden; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* body fill the screen */
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-}
-
-#main-content {
-  display: none;
-  font-size: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* body fill the viewport height */
+  height: 100vh;
+  font-family: 'VT323', monospace;  
+  background-color: black;
+  color: lime;
 }
 
 .startup-text {
@@ -27,33 +36,18 @@ body {
   user-select: none;
 }
 
-/* short delay (after page load) before this plays would help */
-/* TODO: use javascript to randomize */
-@keyframes glitch {
-    0% { transform: translate(0); filter: blur(0);}
-    20% { transform: translate(-125px, 71px); filter: blur(2px);}
-    40% { transform: translate(-140px, -102px); filter: blur(0);}
-    60% { transform: translate(287px, 102px); filter: blur(0px);}
-    /* ALREADY BACK AT STARTING POINT */
-    80% { transform: translate(21px, -56px); filter: blur(px);} 
-    100% { transform: translate(0); filter: blur(0);}
-  }
+#access-denied {
+  /* glitch animation plays on page load, blink animation plays after glitch animation */
+  animation: glitch 0.3s 1.3s, blink 1s 2s infinite;
+  color: firebrick; /* color: crimson; */
+}
 
-  @keyframes blink {
-    0% {opacity: 1;}
-    50% {opacity: 0;}
-    100% {opacity: 1;}
-  }
+#access-granted {
+  display: none;
+}
 
-  #access-denied {
-    /* TODO: add intermittent glitch?  */
-    /* glitch animation plays on page load, blink animation plays after glitch animation */
-    animation: glitch 0.3s 1.3s, blink 1s 2s infinite;
-    color: firebrick;
-  }
-
-  #access-granted {
-    display: none;
-    color: lime;
-  }
+#main-content {
+  display: none;
+  font-size: 36px;
+}
   
