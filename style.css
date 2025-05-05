@@ -20,13 +20,21 @@
   100% {opacity: 1;}
 }
 
+@font-face {
+  /* safe / legal?  */
+  font-family: 'OCR-A';
+  src: url('/fonts/OCRA.ttf') format('truetype');
+}
+
 body {
   display: flex;
   justify-content: center;
   align-items: center;
   /* body fill the viewport height */
   height: 100vh;
-  font-family: 'VT323', monospace;  
+  font-family: 'OCR-A', monospace;  
+  font-style: normal;
+  font-weight: 400;
   background-color: black;
   color: lime;
 }
