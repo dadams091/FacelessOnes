@@ -23,7 +23,7 @@
 @font-face {
   /* safe / legal?  */
   font-family: 'OCR-A';
-  src: url('/fonts/OCRA.ttf') format('truetype');
+  src: url('./fonts/OCRA.ttf') format('truetype');
 }
 
 body {
