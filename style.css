@@ -1,7 +1,10 @@
 * {
-  margin: 0;
   padding: 0;
     /* background-color: red; */
+}
+
+:root {
+  font-size: 16px;
 }
 
 /* TODO: use javascript to randomize position and frequency */
@@ -35,12 +38,13 @@ body {
   font-family: 'OCR-A', monospace;  
   font-style: normal;
   font-weight: 400;
+  font-size: 1rem;
   background-color: black;
   color: lime;
 }
 
 .startup-text {
-  font-size: 44px;
+  font-size: 1.5rem;
   user-select: none;
 }
 
@@ -56,6 +60,8 @@ body {
 
 #main-content {
   display: none;
-  font-size: 36px;
+  width: 100vw;
+  height: 100vh;
+  /* background-color: #333; */
 }
   
