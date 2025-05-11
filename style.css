@@ -60,12 +60,11 @@ body {
 }
 
 main {
-  /* switched to flex after intro anim click */
-  display: none;
+  /* display: flex after page load click (via javascript)*/
+  display: none; /* Default state */
   width: 100vw;
   height: 100vh;
   justify-content: center;
-  /* background-color: #333; */
 }
 
 #top {
@@ -93,8 +92,16 @@ h1 {
   margin: 0 auto;
 }
 
-/* button, h1 {
-  vertical-align: baseline;
-} */
-
+#hamburger-sidebar {
+  /* display: flex when hamburger menu is clicked (via javascript) */
+  display: none; /* Default state */
+  position: fixed; /* Overlay on top of other page items */
+  background-color: #333;
+  width: 25%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  padding: 1rem;
+  /* z-index: 1000;  Ensure it stays above other content */
+}
   
