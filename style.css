@@ -1,0 +1,100 @@
+* {
+  padding: 0;
+  margin: 0;
+    /* background-color: red; */
+}
+
+:root {
+  font-size: 16px;
+}
+
+/* TODO: use javascript to randomize position and frequency */
+@keyframes glitch {
+  0% { transform: translate(0); filter: blur(0);} /*initial position*/
+  20% { transform: translate(-125px, 71px); filter: blur(2px);}
+  40% { transform: translate(-140px, -102px); filter: blur(0);}
+  60% { transform: translate(287px, 102px); filter: blur(0px);}
+  80% { transform: translate(21px, -56px); filter: blur(px);} 
+  100% { transform: translate(0); filter: blur(0);} /*back to initial position*/
+}
+
+@keyframes blink {
+  0% {opacity: 1;}
+  50% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+@font-face {
+  /* safe / legal?  */
+  font-family: 'OCR-A';
+  src: url('./fonts/OCRA.ttf') format('truetype');
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* body fill the viewport height */
+  height: 100vh;
+  font-family: 'OCR-A', monospace;  
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  background-color: black;
+  color: lime;
+}
+
+.startup-text {
+  font-size: 1.5rem;
+  user-select: none;
+}
+
+#access-denied {
+  /* glitch animation plays on page load, blink animation plays after glitch animation */
+  animation: glitch 0.3s 1.3s, blink 1s 2s infinite;
+  color: firebrick; /* color: crimson; */
+}
+
+#access-granted {
+  display: none;
+}
+
+main {
+  /* switched to flex after intro anim click */
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  /* background-color: #333; */
+}
+
+#top {
+  display: flex;
+  /* background-color: pink; */
+  height: 10%;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4rem 0 0 2rem;
+
+}
+
+button {
+  /* background-color: brown; */
+  background-color: black;
+  color: lime;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem !important;
+}
+
+h1 {
+  /* background-color: blue; */
+  margin: 0 auto;
+}
+
+/* button, h1 {
+  vertical-align: baseline;
+} */
+
+  
