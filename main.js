@@ -1,4 +1,5 @@
 const accessGranted = document.querySelector('#access-granted');
+const hamburgerSidebar = document.querySelector("#hamburger-sidebar")
 
 // page load sequence
 document.body.addEventListener('click', () => {
@@ -12,5 +13,9 @@ document.body.addEventListener('click', () => {
 }, {once: true});
 
 document.querySelector("#hamburger-menu").addEventListener('click', () => {
-    document.querySelector("#hamburger-sidebar").style.display = 'flex';
+    hamburgerSidebar.style.display = 'flex';
 });
+
+document.querySelector('#close').addEventListener('click', () => {
+    hamburgerSidebar.style.display = 'none';
+})
