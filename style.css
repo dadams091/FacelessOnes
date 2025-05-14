@@ -1,8 +1,7 @@
 * {
   padding: 0;
-  margin: 0;
-    /* background-color: red; */
   color: lime;
+  font-family: 'OCR-A', monospace;
 }
 
 :root {
@@ -35,14 +34,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* body fill the viewport height */
   height: 100vh;
-  font-family: 'OCR-A', monospace;  
-  font-style: normal;
-  font-weight: 400;
-  font-size: 1rem;
   background-color: black;
-  color: lime;
 }
 
 .startup-text {
@@ -53,70 +46,59 @@ body {
 #access-denied {
   /* glitch animation plays on page load, blink animation plays after glitch animation */
   animation: glitch 0.3s 1.3s, blink 1s 2s infinite;
-  color: firebrick; /* color: crimson; */
+  color: firebrick; /* or color: crimson; */
 }
 
 #access-granted {
-  display: none;
+  display: none; /* Default state */
 }
 
 main {
-  /* display: flex after page load click (via javascript)*/
+  /* Javascript: "display: flex" after page load animation*/
   display: none; /* Default state */
   width: 100vw;
   height: 100vh;
-  justify-content: center;
 }
 
-#top {
+header {
   display: flex;
-  /* background-color: pink; */
   height: 10%;
   width: 100%;
   align-items: center;
-  justify-content: space-between;
   padding: 4rem 0 0 2rem;
 
 }
 
-#hamburger-menu {
-  /* background-color: brown; */
+header button {
   background-color: black;
-  color: lime;
   border: none;
   cursor: pointer;
+  user-select: none;
   font-size: 1.5rem !important;
 }
 
 h1 {
-  /* background-color: blue; */
   margin: 0 auto;
 }
 
 /* nav container */
-#hamburger-sidebar {
-  /* display: flex when hamburger menu is clicked (via javascript) */
+nav {
+  /* Javascript: "display: flex" when hamburger menu is clicked */
   display: none; /* Default state */
-  position: fixed; /* Overlay on top of other page items */
+  /* Overlay on top of other page items */
+  position: fixed;
   background-color: #333;
   width: 25%;
   height: 100vh;
-  top: 0;
-  left: 0;
   flex-direction: column;
-}
-
-a {
-  display: block;
 }
 
 #links {
-  text-align: center;
-  text-decoration: none;
-  flex-grow: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  flex-grow: 1;
+  text-align: center;
   font-size: 1.5rem;
 }
 
@@ -125,17 +107,13 @@ a {
 }
 
 #links a:hover {
-  /* background-color: rgba(51, 100, 51, 0.5); */
   background-color: #252525;
-  opacity: 10;
 }
-
 
 #close {
   background-color: #333;
   border: none;
   cursor: pointer;
-  color: lime;
   width: fit-content;
 }
   

@@ -4,30 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Faceless Ones</title>
-    <link href="style.css" rel="stylesheet">
+    <link href="favicon.ico" type="image/x-icon" rel="icon" >
+
     <link href="https://cdn.jsdelivr.net/npm/modern-normalize@3.0.1/modern-normalize.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
     <script src="main.js" defer></script>
+
 </head>
 <body>
+    <!-- Temporary elements shown on page load, hidden after animation -->
     <div id="access-denied" class="startup-text">ACCESS_DENIED</div>
     <div id="access-granted" class="startup-text">ACCESS_GRANTED</div>
     
-    <!-- AFTER PAGE LOAD ANIMATION -->
-    <!-- Main page content - below -->
+    <!-- Main content displayed after animation -->
     <main>
-        <!-- rename top -->
-        <div id="top">
-            <button id="hamburger-menu">☰</button>
+        <header>
+            <button>☰</button>
             <h1>FACELESS ONES</h1>
-        </div>
-        <nav id="hamburger-sidebar">
+        </header>
+
+        <nav>
             <button id="close">X</button>
             <div id="links">
                 <a href="">HOME</a>
                 <a href="">content</a>
             </div>
         </nav>
-
     </main>
     
 </body>

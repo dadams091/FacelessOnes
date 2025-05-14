@@ -1,21 +1,25 @@
+const accessDenied = document.querySelector('#access-denied');
 const accessGranted = document.querySelector('#access-granted');
-const hamburgerSidebar = document.querySelector("#hamburger-sidebar")
+const mainContent = document.querySelector('main');
+const hamburgerMenu = document.querySelector('header button');
+const hamburgerSidebar = document.querySelector("nav")
+const closeButton = document.querySelector("#close")
 
 // page load sequence
 document.body.addEventListener('click', () => {
-    document.querySelector('#access-denied').style.display = 'none';
+    accessDenied.style.display = 'none';
     accessGranted.style.display = 'block';
 
     setTimeout(() => {
-        document.querySelector('main').style.display = 'flex';
         accessGranted.style.display = 'none';
-    }, 2500)
+        mainContent.style.display = 'flex';
+    }, 1500)
 }, {once: true});
 
-document.querySelector("#hamburger-menu").addEventListener('click', () => {
+hamburgerMenu.addEventListener('click', () => {
     hamburgerSidebar.style.display = 'flex';
 });
 
-document.querySelector('#close').addEventListener('click', () => {
+closeButton.addEventListener('click', () => {
     hamburgerSidebar.style.display = 'none';
 })
