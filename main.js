@@ -23,3 +23,16 @@ hamburgerMenu.addEventListener('click', () => {
 closeButton.addEventListener('click', () => {
     hamburgerSidebar.style.display = 'none';
 })
+
+
+let index = 0;
+const slides = document.querySelectorAll('.slide');
+
+//slideshow transition interval
+setInterval(() => {
+    slides[index].classList.remove('show');
+    index = (index + 1) % slides.length;
+    slides[index].classList.add('show');
+}, 4000);
+
+
